@@ -28,7 +28,7 @@ const rows = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-const UserListPage = () => {
+const UserList = () => {
   const classes = useStyles();
 
   return (
@@ -77,4 +77,4 @@ const UserListPage = () => {
   );
 }
 
-export default UserListPage;
+export default UserList;

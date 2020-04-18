@@ -5,7 +5,7 @@ import {
   Route,
 } from 'react-router-dom';
 
-import List from './pages/List';
+import UserList from './pages/UserList';
 import Header from './components/Header';
 import './App.scss';
 
@@ -15,7 +15,7 @@ const App = () => (
       <Header />
       <Switch>
         <Route path="/">
-          <List />
+          <UserList />
         </Route>
       </Switch>
     </div>
