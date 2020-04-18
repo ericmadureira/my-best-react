@@ -1,5 +1,8 @@
+@import '../shared/shared.scss';
+
 .header {
     display: flex;
+    color: $font;
     flex-direction: row;
     justify-content: space-between;
     padding: 10px 20px;
