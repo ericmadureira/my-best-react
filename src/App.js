@@ -3,9 +3,9 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from 'react-router-dom';
 
+import List from './pages/List';
 import Header from './components/Header';
 import './App.css';
 
@@ -15,6 +15,7 @@ const App = () => (
       <Header />
       <Switch>
         <Route path="/">
+          <List />
         </Route>
       </Switch>
     </div>
