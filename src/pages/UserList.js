@@ -47,6 +47,34 @@ const UserList = () => {
           className='fas'
         />
       </div>
+
+      <div style={{ display: 'flex', padding: '20px 10px', backgroundColor: '#BAEBE1'}}>
+        <div style={{ display: 'flex', margin: '0 10px' }}>
+          <i className='fas fa-puzzle-piece' />
+          <div>
+            <span>Sport type</span>
+            <br />
+            <span>Cycling</span>
+          </div>
+        </div>
+        <div style={{ display: 'flex', margin: '0 10px' }}>
+          <i className='fas fa-trophy' />
+          <div>
+            <span>Mode</span>
+            <br />
+            <span>Advanced</span>
+          </div>
+        </div>
+        <div style={{ display: 'flex', margin: '0 10px' }}>
+          <i className='fas fa-map-signs' />
+          <div>
+            <span>Route</span>
+            <br />
+            <span>30 miles</span>
+          </div>
+        </div>
+      </div>
+
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
