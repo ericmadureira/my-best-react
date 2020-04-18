@@ -7,7 +7,7 @@ import {
 
 import List from './pages/List';
 import Header from './components/Header';
-import './App.css';
+import './App.scss';
 
 const App = () => (
   <Router>
