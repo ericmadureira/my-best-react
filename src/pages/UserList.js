@@ -112,7 +112,7 @@ const UserList = () => {
         </div>
       </div>
 
-      <TableContainer component={Paper}>
+      <TableContainer className={style.tableContainer} component={Paper}>
         <Table aria-label='simple table'>
           <TableHead>
             <TableRow>
