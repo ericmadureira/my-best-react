@@ -10,13 +10,13 @@ const countPhotosPerUser = (albums, photos) => {
   return photosPerUser;
 };
 
-const countPostsPerUser = (posts) => {
+const countPostsPerUser = posts => {
   let postsPerUser = {};
   posts.forEach(post => postsPerUser[post.userId] = 1 + (postsPerUser[post.userId] || 0));
   return postsPerUser;
 };
 
-const countAlbumsPerUser = (albums) => {
+const countAlbumsPerUser = albums => {
   let albumsPerUser = {};
   albums.forEach(album => albumsPerUser[album.userId] = 1 + (albumsPerUser[album.userId] || 0));
   return albumsPerUser;

@@ -17,6 +17,7 @@ import style from './UserList.module.scss';
 
 const UserList = () => {
   const [userList, setUserList] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const fetchUserList = useCallback(async () => {
     try {
@@ -31,7 +32,7 @@ const UserList = () => {
     };
   }, []);
 
-  const removeUser = useCallback((removedId) => {
+  const removeUser = useCallback(removedId => {
     const confirm = window.confirm('Do you really want to delete this user?');
     if (confirm) setUserList(userList.filter(user => user.id !== removedId));
   }, [userList]);
@@ -41,31 +42,35 @@ const UserList = () => {
   }, [fetchUserList]);
 
   const users = useMemo(() => (
-    userList.map((user, index) => (
-      <TableRow
-        className={style.tableRow}
-        key={user.id}
-      >
-        <TableCell component='th' scope='row'>{user.username}</TableCell>
-        <TableCell align='right'>{user.name}</TableCell>
-        <TableCell align='right'>{user.email}</TableCell>
-        <TableCell align='right'>{user.city}</TableCell>
-        <TableCell align='right'>{user.groupRideFrequency}</TableCell>
-        <TableCell align='right'>{user.weekdaysRideFrequency}</TableCell>
-        <TableCell align='right'>{user.posts}</TableCell>
-        <TableCell align='right'>{user.albums}</TableCell>
-        <TableCell align='right'>{user.photos}</TableCell>
-        <TableCell align='right'>
-          <span
-            className={style.deleteIcon}
-            onClick={() => removeUser(user.id)}
-          >
-            <i className='fas fa-trash' />
-          </span>
-        </TableCell>
-      </TableRow>
-    ))
-  ), [userList, removeUser]);
+    userList
+      .filter(user =>
+        user.name.toLowerCase().includes(searchTerm)
+        || user.username.toLowerCase().includes(searchTerm))
+      .map(user => (
+        <TableRow
+          className={style.tableRow}
+          key={user.id}
+        >
+          <TableCell align='left'>{user.username}</TableCell>
+          <TableCell align='right'>{user.name}</TableCell>
+          <TableCell align='right'>{user.email}</TableCell>
+          <TableCell align='right'>{user.city}</TableCell>
+          <TableCell align='right'>{user.groupRideFrequency}</TableCell>
+          <TableCell align='right'>{user.weekdaysRideFrequency}</TableCell>
+          <TableCell align='right'>{user.posts}</TableCell>
+          <TableCell align='right'>{user.albums}</TableCell>
+          <TableCell align='right'>{user.photos}</TableCell>
+          <TableCell align='right'>
+            <span
+              className={style.deleteIcon}
+              onClick={() => removeUser(user.id)}
+            >
+              <i className='fas fa-trash' />
+            </span>
+          </TableCell>
+        </TableRow>
+      ))
+  ), [userList, removeUser, searchTerm]);
 
   return (
     <div>
@@ -73,14 +78,10 @@ const UserList = () => {
         <span>Users</span>
         <hr style={{ display: 'inline-block', width: '700px', margin: '0 10px' }}/>
         <input
-          style={{
-            background: 'url(images/comment-author.gif) no-repeat scroll 7px 7px',
-            paddingLeft: '30px',
-            fontFamily: 'Arial, FontAwesome',
-          }}
-          placeholder='&#xF002; Filter user name'
+          placeholder='&#xF002; Filter by name or username'
           type='text'
           className='fas'
+          onChange={event => setSearchTerm(event.target.value.toLowerCase())}
         />
       </div>
 
