@@ -49,8 +49,8 @@ const UserList = () => {
         <TableCell align='right'>{user.name}</TableCell>
         <TableCell align='right'>{user.email}</TableCell>
         <TableCell align='right'>{user.city}</TableCell>
-        <TableCell align='right'>DATA</TableCell>
-        <TableCell align='right'>DATA</TableCell>
+        <TableCell align='right'>{user.groupRideFrequency}</TableCell>
+        <TableCell align='right'>{user.weekdaysRideFrequency}</TableCell>
         <TableCell align='right'>{user.posts}</TableCell>
         <TableCell align='right'>{user.albums}</TableCell>
         <TableCell align='right'>{user.photos}</TableCell>

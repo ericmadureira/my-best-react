@@ -1,3 +1,7 @@
+import mockUserInfo from '../mock/userInfo';
+
+const { groupRideFrequency, weekdaysRideFrequency } = mockUserInfo;
+
 const countPhotosPerUser = (albums, photos) => {
   let photosPerAlbum = {};
   let photosPerUser = {};
@@ -28,11 +32,13 @@ const parseUserList = (userInfo, posts, albums, photos) => {
       albums: userAlbums[id],
       city,
       email,
+      groupRideFrequency: groupRideFrequency[id],
       id,
       name,
       photos: userPhotos[id],
       posts: userPosts[id],
       username,
+      weekdaysRideFrequency: weekdaysRideFrequency[id],
     };
   });
 };
