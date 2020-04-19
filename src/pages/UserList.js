@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Table,
@@ -9,6 +9,10 @@ import {
   TableRow,
   Paper,
 } from '@material-ui/core/';
+import axios from 'axios';
+
+import urls from '../constants/urls';
+import dataParsers from '../shared/dataParsers';
 
 const useStyles = makeStyles({
   table: {
@@ -16,20 +20,44 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
 const UserList = () => {
   const classes = useStyles();
+
+  const [userList, setUserList] = useState([]);
+
+  const fetchUserList = useCallback(async () => {
+    try {
+      const { data: userInfo } = await axios.get(urls.fetchUserInfo);
+      const { data: posts } = await axios.get(urls.fetchPosts);
+      const { data: albums } = await axios.get(urls.fetchAlbums);
+      const { data: photos } = await axios.get(urls.fetchPhotos);
+      const parsedList = dataParsers.parseUserList(userInfo, posts, albums, photos);
+      setUserList(parsedList);
+    } catch (e) {
+      console.log('Error while fetching data.');
+    };
+  }, []);
+
+  useEffect(() => {
+    fetchUserList();
+  }, [fetchUserList]);
+
+  const users = useMemo(() => (
+    userList.map(user => (
+      <TableRow key={user.name}>
+        <TableCell component='th' scope='row'>{user.username}</TableCell>
+        <TableCell align='right'>{user.name}</TableCell>
+        <TableCell align='right'>{user.email}</TableCell>
+        <TableCell align='right'>{user.city}</TableCell>
+        <TableCell align='right'>DATA</TableCell>
+        <TableCell align='right'>DATA</TableCell>
+        <TableCell align='right'>{user.posts}</TableCell>
+        <TableCell align='right'>{user.albums}</TableCell>
+        <TableCell align='right'>{user.photos}</TableCell>
+        <TableCell align='right'>BOTÃO</TableCell>
+      </TableRow>
+    ))
+  ), [userList]);
 
   return (
     <div>
@@ -76,28 +104,23 @@ const UserList = () => {
       </div>
 
       <TableContainer component={Paper}>
-        <Table className={classes.table} aria-label="simple table">
+        <Table className={classes.table} aria-label='simple table'>
           <TableHead>
             <TableRow>
-              <TableCell>Dessert (100g serving)</TableCell>
-              <TableCell align="right">Calories</TableCell>
-              <TableCell align="right">Fat&nbsp;(g)</TableCell>
-              <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-              <TableCell align="right">Protein&nbsp;(g)</TableCell>
+              <TableCell>Username</TableCell>
+              <TableCell align='right'>Name</TableCell>
+              <TableCell align='right'>E-mail</TableCell>
+              <TableCell align='right'>City</TableCell>
+              <TableCell align='right'>Ride in group</TableCell>
+              <TableCell align='right'>Day of the week</TableCell>
+              <TableCell align='right'>Posts</TableCell>
+              <TableCell align='right'>Albums</TableCell>
+              <TableCell align='right'>Photos</TableCell>
+              <TableCell align='right'></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
-              <TableRow key={row.name}>
-                <TableCell component="th" scope="row">
-                  {row.name}
-                </TableCell>
-                <TableCell align="right">{row.calories}</TableCell>
-                <TableCell align="right">{row.fat}</TableCell>
-                <TableCell align="right">{row.carbs}</TableCell>
-                <TableCell align="right">{row.protein}</TableCell>
-              </TableRow>
-            ))}
+            {users}
           </TableBody>
         </Table>
       </TableContainer>
