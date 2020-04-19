@@ -74,17 +74,6 @@ const UserList = () => {
 
   return (
     <div>
-      <div style={{ margin: '10px 0'}}>
-        <span>Users</span>
-        <hr style={{ display: 'inline-block', width: '700px', margin: '0 10px' }}/>
-        <input
-          placeholder='&#xF002; Filter by name or username'
-          type='text'
-          className='fas'
-          onChange={event => setSearchTerm(event.target.value.toLowerCase())}
-        />
-      </div>
-
       <div style={{ display: 'flex', padding: '20px 10px', backgroundColor: '#BAEBE1'}}>
         <div style={{ display: 'flex', margin: '0 10px' }}>
           <i className='fas fa-puzzle-piece' />
@@ -110,6 +99,17 @@ const UserList = () => {
             <span>30 miles</span>
           </div>
         </div>
+      </div>
+
+      <div style={{ margin: '10px 0'}}>
+        <span>Users</span>
+        <hr style={{ display: 'inline-block', width: '700px', margin: '0 10px' }}/>
+        <input
+          placeholder='&#xF002; Filter by name or username'
+          type='text'
+          className='fas'
+          onChange={event => setSearchTerm(event.target.value.toLowerCase())}
+        />
       </div>
 
       <TableContainer className={style.tableContainer} component={Paper}>

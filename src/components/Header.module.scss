@@ -1,9 +1,47 @@
 @import '../shared/shared.scss';
 
+a {
+  text-decoration: none;
+}
+
+.brand {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-weight: bold;
+  justify-content: space-around;
+}
+
+.companyNameLabel {
+  color: $font;
+  font-size: 18px;
+}
+
 .header {
-    display: flex;
-    color: $font;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px 20px;
+  color: $font;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.logo {
+  align-items: center;
+  background-color: $logo-green;
+  border-radius: 5px;
+  display: flex;
+  font-size: 14px;
+  height: 36px;
+  justify-content: center;
+  margin-right: 10px;
+  width: 36px;
+}
+
+.logoSquare {
+  border: 2px #fff solid;
+  border-radius: 2px;
+  color: #fff;
+  height: 20px;
+  text-align: center;
+  width: 20px;
 }
