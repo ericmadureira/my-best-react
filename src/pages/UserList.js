@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import {
   Table,
   TableBody,
@@ -14,15 +13,9 @@ import axios from 'axios';
 import urls from '../constants/urls';
 import dataParsers from '../shared/dataParsers';
 
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
-});
+import style from './UserList.module.scss';
 
 const UserList = () => {
-  const classes = useStyles();
-
   const [userList, setUserList] = useState([]);
 
   const fetchUserList = useCallback(async () => {
@@ -38,13 +31,21 @@ const UserList = () => {
     };
   }, []);
 
+  const removeUser = useCallback((removedId) => {
+    const confirm = window.confirm('Do you really want to delete this user?');
+    if (confirm) setUserList(userList.filter(user => user.id !== removedId));
+  }, [userList]);
+
   useEffect(() => {
     fetchUserList();
   }, [fetchUserList]);
 
   const users = useMemo(() => (
-    userList.map(user => (
-      <TableRow key={user.name}>
+    userList.map((user, index) => (
+      <TableRow
+        className={style.tableRow}
+        key={user.id}
+      >
         <TableCell component='th' scope='row'>{user.username}</TableCell>
         <TableCell align='right'>{user.name}</TableCell>
         <TableCell align='right'>{user.email}</TableCell>
@@ -54,10 +55,17 @@ const UserList = () => {
         <TableCell align='right'>{user.posts}</TableCell>
         <TableCell align='right'>{user.albums}</TableCell>
         <TableCell align='right'>{user.photos}</TableCell>
-        <TableCell align='right'>BOTÃO</TableCell>
+        <TableCell align='right'>
+          <span
+            className={style.deleteIcon}
+            onClick={() => removeUser(user.id)}
+          >
+            <i className='fas fa-trash' />
+          </span>
+        </TableCell>
       </TableRow>
     ))
-  ), [userList]);
+  ), [userList, removeUser]);
 
   return (
     <div>
@@ -104,7 +112,7 @@ const UserList = () => {
       </div>
 
       <TableContainer component={Paper}>
-        <Table className={classes.table} aria-label='simple table'>
+        <Table aria-label='simple table'>
           <TableHead>
             <TableRow>
               <TableCell>Username</TableCell>

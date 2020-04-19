@@ -26,6 +26,7 @@ const parseUserList = (userInfo, posts, albums, photos) => {
   const userPosts = countPostsPerUser(posts);
   const userAlbums = countAlbumsPerUser(albums);
   const userPhotos = countPhotosPerUser(albums, photos);
+
   return userInfo.map(user => {
     const { address: { city }, email, id, name, username } = user;
     return {
