@@ -1,31 +1,39 @@
 @import '../shared/shared.scss';
 
-input {
-  border: 1.5px solid #e6e6e6;
-  border-radius: 5px;
-  font-weight: normal;
-  padding: 8px;
-  width: 280px;
-}
-
 input::placeholder {
   color: $grey-font;
   font-family: FontAwesome, Segoe UI;
   font-weight: normal;
 }
 
-hr {
+hr.separationLine {
   border: 1.5px solid $light-gray;
   display: inline-block;
-  margin: 0 10px;
-  width: 750px;
+  margin-left: 60px;
+  width: 100%;
 }
 
-.searchBarContainer {
+.pageBarContainer {
   align-items: center;
   display: flex;
   justify-content: space-between;
   margin: 35px 50px;
+}
+
+.searchBarInput {
+  border: 1.5px solid #e6e6e6;
+  border-radius: 5px;
+  color: $grey-font;
+  font-family: FontAwesome, Segoe UI;
+  font-weight: normal;
+  margin-left: 60px;
+  padding: 8px;
+  width: 300px;
+}
+
+.searchBarInput:focus {
+  border: 1.5px solid $primary;
+  outline: none;
 }
 
 .userLabel {
