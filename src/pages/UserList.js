@@ -40,7 +40,7 @@ const UserList = () => {
         user.name.toLowerCase().includes(searchTerm)
         || user.username.toLowerCase().includes(searchTerm))
       .map(user => (
-        <ListRow users removerUser={removeUser} />
+        <ListRow user={user} removeUser={removeUser} />
       ))
   ), [userList, removeUser, searchTerm]);
 

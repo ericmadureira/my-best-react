@@ -10,12 +10,20 @@ const ListRow = ({ user, removeUser }) => (
   >
     <TableCell align='left'>{user.username}</TableCell>
     <TableCell align='right'>{user.name}</TableCell>
-    <TableCell align='right'>{user.email}</TableCell>
-    <TableCell align='right'>{user.city}</TableCell>
+    <TableCell align='right'>
+      <span className={style.highlighted}>{user.email}</span>
+    </TableCell>
+    <TableCell align='right'>
+      <span className={style.highlighted}>{user.city}</span>
+    </TableCell>
     <TableCell align='right'>{user.groupRideFrequency}</TableCell>
     <TableCell align='right'>{user.weekdaysRideFrequency}</TableCell>
-    <TableCell align='right'>{user.posts}</TableCell>
-    <TableCell align='right'>{user.albums}</TableCell>
+    <TableCell align='right'>
+      <span className={style.highlighted}>{user.posts}</span>
+    </TableCell>
+    <TableCell align='right'>
+      <span className={style.highlighted}>{user.albums}</span>
+    </TableCell>
     <TableCell align='right'>{user.photos}</TableCell>
     <TableCell align='right'>
       <span

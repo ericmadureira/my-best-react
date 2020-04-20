@@ -4,6 +4,14 @@
   visibility: hidden;
 }
 
+.highlighted {
+  color: $primary;
+}
+
+.tableRow {
+  margin: 0 50px;
+}
+
 .tableRow:hover {
   .deleteIcon {
     visibility: visible;

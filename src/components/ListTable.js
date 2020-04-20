@@ -6,16 +6,15 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Paper,
 } from '@material-ui/core/';
 
 import style from './ListTable.module.scss';
 
 const ListTable = ({ users }) => (
-  <TableContainer className={style.tableContainer} component={Paper}>
+  <TableContainer className={style.tableContainer}>
     <Table aria-label='simple table'>
       <TableHead>
-        <TableRow>
+        <TableRow className={style.tableRow}>
           <TableCell>Username</TableCell>
           <TableCell align='right'>Name</TableCell>
           <TableCell align='right'>E-mail</TableCell>
