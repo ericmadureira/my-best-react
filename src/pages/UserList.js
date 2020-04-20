@@ -13,6 +13,7 @@ import axios from 'axios';
 import urls from '../constants/urls';
 import dataParsers from '../shared/dataParsers';
 import CategoryContainer from '../components/CategoryContainer';
+import SearchBar from '../components/SearchBar';
 
 import style from './UserList.module.scss';
 
@@ -76,17 +77,7 @@ const UserList = () => {
   return (
     <div>
       <CategoryContainer />
-
-      <div style={{ margin: '10px 0'}}>
-        <span>Users</span>
-        <hr style={{ display: 'inline-block', width: '700px', margin: '0 10px' }}/>
-        <input
-          placeholder='&#xF002; Filter by name or username'
-          type='text'
-          className='fas'
-          onChange={event => setSearchTerm(event.target.value.toLowerCase())}
-        />
-      </div>
+      <SearchBar setSearchTerm={setSearchTerm} />
 
       <TableContainer className={style.tableContainer} component={Paper}>
         <Table aria-label='simple table'>

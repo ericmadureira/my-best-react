@@ -1,0 +1,33 @@
+@import '../shared/shared.scss';
+
+input {
+  border: 1.5px solid #e6e6e6;
+  border-radius: 5px;
+  padding: 8px;
+  width: 280px;
+}
+
+input::placeholder {
+  color: $grey-font;
+  font-family: FontAwesome, Segoe UI;
+  font-weight: normal;
+}
+
+hr {
+  border: 1.5px solid $light-gray;
+  display: inline-block;
+  margin: 0 10px;
+  width: 750px;
+}
+
+.searchBarContainer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 35px 50px;
+}
+
+.userLabel {
+  color: $font;
+  font-size: 34px;
+}
