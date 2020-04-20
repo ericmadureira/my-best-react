@@ -1,38 +1,34 @@
-import React, {
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import axios from 'axios';
 
-import { Context } from '../App';
+import urls from '../constants/urls';
+import dataParsers from '../shared/dataParsers';
 import CategoryContainer from '../components/CategoryContainer';
 import PageBar from '../components/PageBar';
 import ListTable from '../components/ListTable';
 import ListRow from '../components/ListRow';
-import Api from '../services/api';
 
 const UserList = () => {
-  const { userList, setUserList } = useContext(Context);
+  const [userList, setUserList] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
   const fetchUserList = useCallback(async () => {
     try {
-      const emptyUserList = Array.isArray(userList) && !userList.length;
-      if (emptyUserList){
-        const parsedList = await Api.userListService();
-        setUserList(parsedList);
-      }
+      const { data: userInfo } = await axios.get(urls.fetchUserInfo);
+      const { data: posts } = await axios.get(urls.fetchPosts);
+      const { data: albums } = await axios.get(urls.fetchAlbums);
+      const { data: photos } = await axios.get(urls.fetchPhotos);
+      const parsedList = dataParsers.parseUserList(userInfo, posts, albums, photos);
+      setUserList(parsedList);
     } catch (e) {
       console.log('Error while fetching data.');
     };
-  }, [setUserList, userList]);
+  }, []);
 
   const removeUser = useCallback(removedId => {
     const confirm = window.confirm('Do you really want to delete this user?');
     if (confirm) setUserList(userList.filter(user => user.id !== removedId));
-  }, [userList, setUserList]);
+  }, [userList]);
 
   useEffect(() => {
     fetchUserList();
