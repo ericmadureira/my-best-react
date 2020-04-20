@@ -4,7 +4,7 @@ import axios from 'axios';
 import urls from '../constants/urls';
 import dataParsers from '../shared/dataParsers';
 import CategoryContainer from '../components/CategoryContainer';
-import SearchBar from '../components/SearchBar';
+import PageBar from '../components/PageBar';
 import ListTable from '../components/ListTable';
 import ListRow from '../components/ListRow';
 
@@ -47,7 +47,11 @@ const UserList = () => {
   return (
     <div>
       <CategoryContainer />
-      <SearchBar setSearchTerm={setSearchTerm} />
+      <PageBar
+        hasSearchInput={true}
+        label='Users'
+        setSearchTerm={setSearchTerm}
+      />
       <ListTable users={users} />
     </div>
   );
