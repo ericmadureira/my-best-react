@@ -1,5 +1,12 @@
+@import '../shared/shared.scss';
+
 .deleteIcon {
   visibility: hidden;
+}
+
+div .tableContainer {
+  overflow-x: visible;
+  width: 100%;
 }
 
 .tableRow:hover {
@@ -8,15 +15,10 @@
   }
 }
 
-div .tableContainer {
-  width: 100%;
-  overflow-x: visible;
-}
-
 th {
+  background-color: #fff;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, .15);
   position: sticky;
   top: 0;
   z-index: 10;
-  background-color: #fff;
-  box-shadow: 0 2px 1px rgba(0, 0, 0, .15);
 }
