@@ -1,6 +1,6 @@
 import React from 'react';
 
-import style from './Header.module.scss';
+import style from './HeaderLogo.module.scss';
 
 const HeaderLogo = () => (
   <div className={style.logo}>

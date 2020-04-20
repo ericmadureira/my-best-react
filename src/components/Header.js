@@ -17,7 +17,7 @@ const Header = () => {
           EM
         </div>
         <span className={style.userNameLabel}>Eric Madureira</span>
-        <i class='fas fa-chevron-down' />
+        <i className='fas fa-chevron-down' />
       </div>
     </header>
   );
