@@ -1,0 +1,11 @@
+@import '../shared/shared.scss';
+
+.deleteIcon {
+  visibility: hidden;
+}
+
+.tableRow:hover {
+  .deleteIcon {
+    visibility: visible;
+  }
+}

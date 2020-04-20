@@ -1,21 +1,12 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-} from '@material-ui/core/';
 import axios from 'axios';
 
 import urls from '../constants/urls';
 import dataParsers from '../shared/dataParsers';
 import CategoryContainer from '../components/CategoryContainer';
 import SearchBar from '../components/SearchBar';
-
-import style from './UserList.module.scss';
+import ListTable from '../components/ListTable';
+import ListRow from '../components/ListRow';
 
 const UserList = () => {
   const [userList, setUserList] = useState([]);
@@ -49,28 +40,7 @@ const UserList = () => {
         user.name.toLowerCase().includes(searchTerm)
         || user.username.toLowerCase().includes(searchTerm))
       .map(user => (
-        <TableRow
-          className={style.tableRow}
-          key={user.id}
-        >
-          <TableCell align='left'>{user.username}</TableCell>
-          <TableCell align='right'>{user.name}</TableCell>
-          <TableCell align='right'>{user.email}</TableCell>
-          <TableCell align='right'>{user.city}</TableCell>
-          <TableCell align='right'>{user.groupRideFrequency}</TableCell>
-          <TableCell align='right'>{user.weekdaysRideFrequency}</TableCell>
-          <TableCell align='right'>{user.posts}</TableCell>
-          <TableCell align='right'>{user.albums}</TableCell>
-          <TableCell align='right'>{user.photos}</TableCell>
-          <TableCell align='right'>
-            <span
-              className={style.deleteIcon}
-              onClick={() => removeUser(user.id)}
-            >
-              <i className='fas fa-trash' />
-            </span>
-          </TableCell>
-        </TableRow>
+        <ListRow users removerUser={removeUser} />
       ))
   ), [userList, removeUser, searchTerm]);
 
@@ -78,28 +48,7 @@ const UserList = () => {
     <div>
       <CategoryContainer />
       <SearchBar setSearchTerm={setSearchTerm} />
-
-      <TableContainer className={style.tableContainer} component={Paper}>
-        <Table aria-label='simple table'>
-          <TableHead>
-            <TableRow>
-              <TableCell>Username</TableCell>
-              <TableCell align='right'>Name</TableCell>
-              <TableCell align='right'>E-mail</TableCell>
-              <TableCell align='right'>City</TableCell>
-              <TableCell align='right'>Ride in group</TableCell>
-              <TableCell align='right'>Day of the week</TableCell>
-              <TableCell align='right'>Posts</TableCell>
-              <TableCell align='right'>Albums</TableCell>
-              <TableCell align='right'>Photos</TableCell>
-              <TableCell align='right'></TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {users}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      <ListTable users={users} />
     </div>
   );
 }
