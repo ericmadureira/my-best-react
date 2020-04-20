@@ -1,0 +1,90 @@
+@import '../shared/shared.scss';
+
+.addForm {
+  display: flex;
+  justify-content: space-between;
+  margin: 45px 140px;
+}
+
+.addForm input:focus {
+  border: 1.5px solid $primary;
+  outline: none;
+}
+
+.cancelButton {
+  background-color: #E3E3E3;
+  color: $grey-font;
+}
+
+.fieldContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+}
+
+.fieldLabel {
+  font-weight: 500;
+}
+
+.formButton {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  padding: 10px 20px;
+}
+
+.formContainer {
+  box-sizing: border-box;
+  margin: 30px 50px;
+}
+
+.formInstructions {
+  color: $grey-font;
+  font-size: 13px;
+  visibility: hidden;
+}
+
+.formPart {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+.formTextInput {
+  border: 1.5px solid #e6e6e6;
+  border-radius: 5px;
+  color: $grey-font;
+  font-weight: normal;
+  margin: 3px 0;
+  padding: 8px;
+  width: 300px;
+}
+
+hr.upperBorder {
+  border: 1.5px solid $light-gray;
+  box-sizing: border-box;
+  display: inline-block;
+  width: calc(100% - 280px);
+}
+
+.multiFieldContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+}
+
+.usernameInput :hover {
+  .usernameInstruction {
+    visibility: visible;
+  }
+}
+
+.submitButton {
+  background-color: $primary;
+  color: #fff;
+}
+
+.upperBorderContainer{
+  display: flex;
+}

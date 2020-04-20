@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 
 import UserList from './pages/UserList';
+import UserRegistration from './pages/UserRegistration';
 import Header from './components/Header';
 import './App.scss';
 
@@ -26,7 +27,7 @@ const App = () => {
         <Header />
         <Switch>
           <Route path='/users/new'>
-            <UserList />
+            <UserRegistration />
           </Route>
           <Route path='/users'>
             <UserList />
