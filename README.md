@@ -1,13 +1,16 @@
 # Venturus Frontend Test
 
 ## How to run
-1. clone the repository
-2. run `yarn` to install all dependencies
-3. run `yarn start` to serve the app at http://localhost:3000
+1. Clone the repository
+2. Run `yarn` to install all dependencies
+3. Run `yarn start` to serve the app at http://localhost:3000
 
 ## Pages/Routes
 - [User List](http://localhost:3000/users)
 - [User Registration](http://localhost:3000/users/new)
+
+## Tests
+- Run `yarn test` to test the components
 
 ## Tech stack
 - React
