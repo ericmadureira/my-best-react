@@ -13,7 +13,11 @@ const Header = () => {
       </Link>
 
       <div className={style.menu}>
-        Menu
+        <div className={style.photo}>
+          EM
+        </div>
+        <span className={style.userNameLabel}>Eric Madureira</span>
+        <i class='fas fa-chevron-down' />
       </div>
     </header>
   );
