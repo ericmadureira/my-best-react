@@ -2,6 +2,7 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
+  Redirect,
   Route,
 } from 'react-router-dom';
 
@@ -14,8 +15,14 @@ const App = () => (
     <div className='App'>
       <Header />
       <Switch>
-        <Route path="/">
+        <Route path='/users/new'>
           <UserList />
+        </Route>
+        <Route path='/users'>
+          <UserList />
+        </Route>
+        <Route path='/'>
+          <Redirect to={{ pathname: '/users' }} />
         </Route>
       </Switch>
     </div>
