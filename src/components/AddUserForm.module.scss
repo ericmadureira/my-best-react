@@ -16,6 +16,17 @@
   color: $grey-font;
 }
 
+.cityInputContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 419px;
+}
+
+.cityInputContainer span:nth-child(2) {
+  color: $grey-font;
+  font-size: 13px;
+}
+
 .fieldContainer {
   display: flex;
   flex-direction: column;
@@ -58,7 +69,7 @@
   font-weight: normal;
   margin: 3px 0;
   padding: 8px;
-  width: 300px;
+  width: 400px;
 }
 
 hr.upperBorder {
@@ -72,6 +83,11 @@ hr.upperBorder {
   display: flex;
   flex-direction: column;
   margin: 5px 0;
+}
+
+.multiFieldContainer div {
+  display: flex;
+  justify-content: space-between;
 }
 
 .usernameInstruction {

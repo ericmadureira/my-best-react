@@ -43,7 +43,10 @@ const AddUserForm = ({ addUser }) => (
 
       <div className={style.formPart}>
         <div className={style.fieldContainer}>
-          <span className={style.fieldLabel}>City</span>
+          <div className={style.cityInputContainer}>
+            <span className={style.fieldLabel}>City</span>
+            <span>optional</span>
+          </div>
           <input type='text' className={style.formTextInput} />
           <span className={style.formInstructions}>Instruções</span>
         </div>
@@ -51,40 +54,52 @@ const AddUserForm = ({ addUser }) => (
         <div className={style.multiFieldContainer}>
           <span className={style.fieldLabel}>Ride in group?</span>
           <div>
-            <input type='radio' id='always' name='groupRide' value='always' />
-            <label for='male'>Always</label>
-
-            <input type='radio' id='sometimes' name='groupRide' value='sometimes' />
-            <label for='sometimes'>Sometimes</label>
-
-            <input type='radio' id='never' name='groupRide' value='never' />
-            <label for='never'>Never</label>
+            <div className={style.inputContainer}>
+              <input type='radio' id='always' name='groupRide' value='always' />
+              <label for='male'>Always</label>
+            </div>
+            <div className={style.inputContainer}>
+              <input type='radio' id='sometimes' name='groupRide' value='sometimes' />
+              <label for='sometimes'>Sometimes</label>
+            </div>
+            <div className={style.inputContainer}>
+              <input type='radio' id='never' name='groupRide' value='never' />
+              <label for='never'>Never</label>
+            </div>
           </div>
         </div>
 
         <div className={style.multiFieldContainer}>
           <span className={style.fieldLabel}>Days of the week</span>
           <div>
-            <input type='checkbox' id='sun' name='sun' value='sun' />
-            <label for='sun'>Sun</label>
-
-            <input type='checkbox' id='mon' name='mon' value='mon' />
-            <label for='mon'>Mon</label>
-
-            <input type='checkbox' id='tue' name='tue' value='tue' />
-            <label for='tue'>Tue</label>
-
-            <input type='checkbox' id='wed' name='wed' value='wed' />
-            <label for='wed'>Wed</label>
-
-            <input type='checkbox' id='thu' name='thu' value='thu' />
-            <label for='thu'>Thu</label>
-
-            <input type='checkbox' id='fri' name='fri' value='fri' />
-            <label for='fri'>Fri</label>
-
-            <input type='checkbox' id='sat' name='sat' value='sat' />
-            <label for='sat'>Sat</label>
+            <div className={style.inputContainer}>
+              <input type='checkbox' id='sun' name='sun' value='sun' />
+              <label for='sun'>Sun</label>
+            </div>
+            <div className={style.inputContainer}>
+              <input type='checkbox' id='mon' name='mon' value='mon' />
+              <label for='mon'>Mon</label>
+            </div>
+            <div className={style.inputContainer}>
+              <input type='checkbox' id='tue' name='tue' value='tue' />
+              <label for='tue'>Tue</label>
+            </div>
+            <div className={style.inputContainer}>
+              <input type='checkbox' id='wed' name='wed' value='wed' />
+              <label for='wed'>Wed</label>
+            </div>
+            <div className={style.inputContainer}>
+              <input type='checkbox' id='thu' name='thu' value='thu' />
+              <label for='thu'>Thu</label>
+            </div>
+            <div className={style.inputContainer}>
+              <input type='checkbox' id='fri' name='fri' value='fri' />
+              <label for='fri'>Fri</label>
+            </div>
+            <div className={style.inputContainer}>
+              <input type='checkbox' id='sat' name='sat' value='sat' />
+              <label for='sat'>Sat</label>
+            </div>
           </div>
         </div>
       </div>
