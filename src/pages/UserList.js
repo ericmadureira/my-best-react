@@ -7,7 +7,6 @@ import React, {
 } from 'react';
 
 import { Context } from '../App';
-import CategoryContainer from '../components/CategoryContainer';
 import PageBar from '../components/PageBar';
 import ListTable from '../components/ListTable';
 import ListRow from '../components/ListRow';
@@ -50,7 +49,6 @@ const UserList = () => {
 
   return (
     <div>
-      <CategoryContainer />
       <PageBar
         hasSearchInput={true}
         label='Users'
