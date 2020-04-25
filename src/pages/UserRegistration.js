@@ -15,11 +15,11 @@ const UserList = () => {
 
   return (
     <div>
-      <FormHelp />
       <PageBar
         hasSearchInput={false}
         label='Registration'
       />
+      <FormHelp />
       <AddUserForm addUser={addUser} />
     </div>
   );

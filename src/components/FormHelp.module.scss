@@ -1,37 +1,35 @@
 @import '../shared/shared.scss';
 
-.category {
-  color: $font;
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: -3px;
-}
-
-.categoryContainer {
-  background-color: #BAEBE1;
+.formHelp {
   display: flex;
-  padding: 35px 50px;
+  flex-direction: row;
+  padding: 0 50px;
 }
 
-.categoryDescription {
-  display: flex;
-  flex-direction: column;
-}
-
-.categoryIcon {
-  color: $category-icon-green;
-  font-size: 40px;
-  margin-right: 25px;
-}
-
-.categoryLabel {
-  color: $grey-font;
-  font-size: 14px;
-}
-
-.listCategory {
+.help {
   align-items: center;
   display: flex;
-  justify-content: space-around;
-  margin-right: 60px;
+  margin-top: 15px;
+}
+
+.help i {
+  color: $primary;
+  font-size: 60px;
+  margin-right: 10px;
+}
+
+.help p {
+  color: $font;
+  margin: 0;
+}
+
+.helpSession {
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+}
+
+.helpSession span {
+  color: $primary;
+  font-size: 22px;
 }
