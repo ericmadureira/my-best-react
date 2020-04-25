@@ -15,8 +15,8 @@ const AddUserForm = ({ addUser }) => (
       <div className={style.formPart}>
         <div className={style.fieldContainer}>
           <span className={style.fieldLabel}>Username</span>
-          <input type='text' className={`${style.formTextInput} ${style.usernameInput}`} />
-          <span className={`${style.formInstructions} ${style.usernameInstruction}`}>Instruções</span>
+          <input type='text' className={style.formTextInput} />
+          <span className={style.formInstructions}>Instruções</span>
         </div>
 
         <div className={style.fieldContainer}>

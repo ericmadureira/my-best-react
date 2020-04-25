@@ -74,10 +74,12 @@ hr.upperBorder {
   margin: 5px 0;
 }
 
-.usernameInput :hover {
-  .usernameInstruction {
-    visibility: visible;
-  }
+.usernameInstruction {
+  visibility: hidden;
+}
+
+.formTextInput:focus ~ .formInstructions {
+  visibility: visible;
 }
 
 .submitButton {
