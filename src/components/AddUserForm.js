@@ -1,6 +1,7 @@
 import React from 'react';
 
 import TextInput from './forms/TextInput';
+import FormButton from './forms/FormButton';
 import style from './AddUserForm.module.scss';
 
 const AddUserForm = ({ addUser }) => {
@@ -8,19 +9,15 @@ const AddUserForm = ({ addUser }) => {
     <div className={style.formContainer}>
       <hr/>
 
-      <form className={style.addForm}>
+      <form className={style.addUserForm}>
         <div className={style.formPart}>
           <TextInput label='Username' instructions='Instructions' />
           <TextInput label='Name' instructions='Instructions' />
           <TextInput label='Email' instructions='Instructions' />
 
           <div>
-            <button type='submit' className={`${style.formButton} ${style.submitButton}`}>
-              Save
-            </button>
-            <button className={`${style.formButton} ${style.cancelButton}`}>
-              Discard
-            </button>
+            <FormButton type='submit' label='Save' />
+            <FormButton type='reset' label='Discard' />
           </div>
         </div>
 

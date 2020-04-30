@@ -1,27 +1,14 @@
 @import '../shared/shared.scss';
 
-.addForm {
+.addUserForm {
   display: flex;
   justify-content: space-between;
   margin: 45px 140px;
 }
 
-.addForm input:focus {
+.addUserForm input:focus {
   border: 1.5px solid $primary;
   outline: none;
-}
-
-.cancelButton {
-  background-color: #E3E3E3;
-  color: $grey-font;
-}
-
-.formButton {
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-right: 10px;
-  padding: 10px 20px;
 }
 
 .formContainer {
@@ -57,9 +44,4 @@
 
 .usernameInstruction {
   visibility: hidden;
-}
-
-.submitButton {
-  background-color: $primary;
-  color: #fff;
 }
