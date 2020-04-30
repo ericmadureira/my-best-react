@@ -30,18 +30,3 @@
   display: inline-block;
   width: calc(100% - 280px);
 }
-
-.multiFieldContainer {
-  display: flex;
-  flex-direction: column;
-  margin: 5px 0;
-}
-
-.multiFieldContainer div {
-  display: flex;
-  justify-content: space-between;
-}
-
-.usernameInstruction {
-  visibility: hidden;
-}
