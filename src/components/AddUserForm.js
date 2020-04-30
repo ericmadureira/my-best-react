@@ -6,7 +6,7 @@ import style from './AddUserForm.module.scss';
 const AddUserForm = ({ addUser }) => {
   return (
     <div className={style.formContainer}>
-      <hr className={style.upperBorder}/>
+      <hr/>
 
       <form className={style.addForm}>
         <div className={style.formPart}>

@@ -37,7 +37,7 @@
   width: 45%;
 }
 
-hr.upperBorder {
+.formContainer > hr {
   border: 1.5px solid $light-gray;
   box-sizing: border-box;
   display: inline-block;
@@ -62,8 +62,4 @@ hr.upperBorder {
 .submitButton {
   background-color: $primary;
   color: #fff;
-}
-
-.upperBorderContainer{
-  display: flex;
 }
