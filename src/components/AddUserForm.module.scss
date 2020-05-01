@@ -2,6 +2,7 @@
 
 .addUserForm {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin: 45px 140px;
 }
@@ -9,6 +10,11 @@
 .addUserForm input:focus {
   border: 1.5px solid $primary;
   outline: none;
+}
+
+.addUserForm > div {
+  display: flex;
+  flex-direction: row;
 }
 
 .formContainer {
