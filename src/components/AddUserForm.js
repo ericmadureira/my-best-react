@@ -1,4 +1,5 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 
 import TextInput from './forms/TextInput';
 import FormButton from './forms/FormButton';
@@ -7,31 +8,42 @@ import { groupRideOptions, weekDays } from '../constants/formOptions';
 import style from './AddUserForm.module.scss';
 
 const AddUserForm = ({ addUser }) => {
+  const { register, handleSubmit, reset } = useForm();
+
+  const onSubmit = data => {
+    console.log('SUBMITTED VALUES: ', data);
+    // ADICIONA USER NO STATE
+    alert('The form was submitted. Thanks for your contact.');
+    reset();
+  };
+
   return (
     <div className={style.formContainer}>
       <hr/>
 
-      <form className={style.addUserForm}>
+      <form className={style.addUserForm} onSubmit={handleSubmit(onSubmit)}>
         <div>
           <div className={style.formPart}>
-            <TextInput label='Username' instructions='Instructions' />
-            <TextInput label='Name' instructions='Instructions' />
-            <TextInput label='Email' instructions='Instructions' />
+            <TextInput label='Username' name='username' instructions='Instructions' registerField={register} />
+            <TextInput label='Name' name='name' instructions='Instructions' registerField={register} />
+            <TextInput label='Email' name='email' instructions='Instructions' registerField={register} />
           </div>
 
           <div className={style.formPart}>
-            <TextInput label='City' instructions='Instructions' optional />
+            <TextInput label='City' name='city' instructions='Instructions' optional registerField={register} />
             <MultiOptionInput
               label={'Ride in group?'}
               name={'groupRide'}
               options={groupRideOptions}
               type={'radio'}
+              registerField={register}
             />
             <MultiOptionInput
               label={'Days of the week'}
               name={'weekDays'}
               options={weekDays}
               type={'checkbox'}
+              registerField={register}
             />
           </div>
         </div>
