@@ -5,8 +5,9 @@ import style from './MultiOptionInput.module.scss';
 const MultiOptionInput = ({ label, name, options, registerField, type }) => {
   const inputOptions = useMemo(() => options.map(option => {
     const [value, label] = option;
+    const key = `${name}-${value}`;
     return (
-      <div className={style.inputContainer}>
+      <div className={style.inputContainer} key={key} >
         <input type={type} name={name} value={value} ref={registerField} />
         <label htmlFor={value}>{label}</label>
       </div>

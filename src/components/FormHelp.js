@@ -8,7 +8,7 @@ const FormHelp = () => (
     <div className={style.helpSession}>
       <span>Need help?</span>
       <div className={style.help}>
-        <i class='far fa-life-ring' />
+        <i className='far fa-life-ring' />
         <p>
           Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
           Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
@@ -20,7 +20,7 @@ const FormHelp = () => (
     <div className={style.helpSession}>
       <span>Why register?</span>
       <div className={style.help}>
-        <i class='fas fa-heartbeat' />
+        <i className='fas fa-heartbeat' />
         <p>
           Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
           Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
@@ -32,7 +32,7 @@ const FormHelp = () => (
     <div className={style.helpSession}>
       <span>What people are saying...</span>
       <div className={style.help}>
-      <i class='far fa-smile' />
+      <i className='far fa-smile' />
         <p>
           Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
           Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
