@@ -7,6 +7,7 @@ import {
   TableHead,
   TableRow,
 } from '@material-ui/core/';
+import { Link } from 'react-router-dom';
 
 import style from './ListTable.module.scss';
 
@@ -31,6 +32,9 @@ const ListTable = ({ users }) => (
         {users}
       </TableBody>
     </Table>
+    <Link to="/users/new">
+      <button style={{ marginTop: '20px'}}>Add User</button>
+    </Link>
   </TableContainer>
 );
 

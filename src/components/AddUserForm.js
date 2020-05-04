@@ -1,5 +1,5 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 import TextInput from './forms/TextInput';
 import FormButton from './forms/FormButton';
@@ -51,6 +51,12 @@ const AddUserForm = ({ addUser }) => {
         <div>
           <FormButton type='submit' label='Save' />
           <FormButton type='reset' label='Discard' />
+        </div>
+
+        <div>
+          <Link to="/users">
+            <button style={{ marginTop: '20px'}}>User List</button>
+          </Link>
         </div>
       </form>
     </div>
