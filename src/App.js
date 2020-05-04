@@ -12,10 +12,7 @@ import Header from './components/Header';
 import CategoryContainer from './components/CategoryContainer';
 import './App.scss';
 
-export const Context = createContext({
-  userList: [],
-  setUserList: () => {},
-});
+export const Context = createContext({});
 
 const App = () => {
   const [userList, setUserList] = useState([]);
