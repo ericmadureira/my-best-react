@@ -7,21 +7,13 @@ import MultiOptionInput from './forms/MultiOptionInput';
 import { groupRideOptions, weekDays } from '../constants/formOptions';
 import style from './AddUserForm.module.scss';
 
-const AddUserForm = ({ addUser }) => {
-  const { register, handleSubmit, reset } = useForm();
-
-  const onSubmit = data => {
-    console.log('SUBMITTED VALUES: ', data);
-    // ADICIONA USER NO STATE
-    alert('The form was submitted. Thanks for your contact.');
-    reset();
-  };
+const AddUserForm = ({ addUser, handleSubmit, register }) => {
 
   return (
     <div className={style.formContainer}>
       <hr/>
 
-      <form className={style.addUserForm} onSubmit={handleSubmit(onSubmit)}>
+      <form className={style.addUserForm} onSubmit={handleSubmit(addUser)}>
         <div>
           <div className={style.formPart}>
             <TextInput label='Username' name='username' instructions='Instructions' registerField={register} />
@@ -33,14 +25,14 @@ const AddUserForm = ({ addUser }) => {
             <TextInput label='City' name='city' instructions='Instructions' optional registerField={register} />
             <MultiOptionInput
               label={'Ride in group?'}
-              name={'groupRide'}
+              name={'groupRideFrequency'}
               options={groupRideOptions}
               type={'radio'}
               registerField={register}
             />
             <MultiOptionInput
               label={'Days of the week'}
-              name={'weekDays'}
+              name={'weekdaysRideFrequency'}
               options={weekDays}
               type={'checkbox'}
               registerField={register}

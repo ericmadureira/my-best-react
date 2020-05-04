@@ -44,8 +44,19 @@ const parseUserList = (userInfo, posts, albums, photos) => {
   });
 };
 
+const parseNewUserData = data => {
+  // To-Do: turn change id type from number to string (uuid)
+  data.id = Math.floor(Math.random() * 1090);
+  data.albums = 0;
+  data.photos = 0;
+  data.posts = 0;
+  data.weekdaysRideFrequency = data.weekdaysRideFrequency.join(', ');
+  return data;
+};
+
 const dataParsers = {
   parseUserList,
+  parseNewUserData,
 };
 
 export default dataParsers;
