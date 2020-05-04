@@ -1,15 +1,15 @@
 export const groupRideOptions = [
-  ['always', 'Always'],
-  ['sometimes', 'Sometimes'],
-  ['never', 'Never'],
+  ['Always', 'Always'],
+  ['Sometimes', 'Sometimes'],
+  ['Never', 'Never'],
 ];
 
 export const weekDays = [
-  ['sun', 'Sun'],
-  ['mon', 'Mon'],
-  ['tue', 'Tue'],
-  ['wed', 'Wed'],
-  ['thu', 'Thu'],
-  ['fri', 'Fri'],
-  ['sat', 'Sat'],
+  ['Sun', 'Sun'],
+  ['Mon', 'Mon'],
+  ['Tue', 'Tue'],
+  ['Wed', 'Wed'],
+  ['Thu', 'Thu'],
+  ['Fri', 'Fri'],
+  ['Sat', 'Sat'],
 ];
