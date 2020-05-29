@@ -3,21 +3,22 @@
 .breadcrumb {
   background-color: $menu-selected;
   display: flex;
-  padding: 8px 50px;
+  font-size: 14px;
+  padding: 10px 50px;
 }
 
 .breadcrumb > a:first-child i {
   color: $primary;
 }
 
-.breadcrumb > a:last-child span:hover {
-  color: $primary;
-  text-decoration: underline;
-}
-
 .link {
   cursor: pointer;
   padding-right: 5px;
+}
+
+.link:hover {
+  color: $primary;
+  text-decoration: underline;
 }
 
 .link span {
