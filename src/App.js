@@ -1,4 +1,4 @@
-import React, { createContext, useMemo, useState } from 'react';
+import React, { createContext, Suspense, useMemo, useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -32,10 +32,12 @@ const App = () => {
           <Breadcrumb />
           <CategoryContainer />
           <Switch>
-            {routes}
-            <Route path='/'>
-              <Redirect to={{ pathname: '/users' }} />
-          </Route>
+            <Suspense fallback={<h1>Rendering...</h1>}>
+              {routes}
+              <Route path='/'>
+                <Redirect to={{ pathname: '/users' }} />
+              </Route>
+            </Suspense>
           </Switch>
         </div>
       </Router>

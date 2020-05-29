@@ -1,5 +1,7 @@
-import UserList from './pages/UserList';
-import UserRegistration from './pages/UserRegistration';
+import { lazy } from 'react';
+
+const UserList = lazy(() => import('./pages/UserList'));
+const UserRegistration = lazy(() => import('./pages/UserRegistration'));
 
 export const Routes = [
   {
