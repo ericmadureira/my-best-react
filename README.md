@@ -1,4 +1,7 @@
-# Venturus Frontend Test
+# My best React
+
+## Description
+This repository contains a demonstration of my React and front-end skills.
 
 ## How to run
 1. Clone the repository
