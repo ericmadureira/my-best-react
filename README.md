@@ -17,6 +17,7 @@ This repository contains a demonstration of my React and front-end skills.
 
 ## Tech stack
 - React
+- react-testing-library
 - Suspense/Lazy (Code splitting)
 - Material-UI
 - React router
