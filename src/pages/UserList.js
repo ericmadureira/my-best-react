@@ -24,7 +24,7 @@ const UserList = () => {
         setUserList(parsedList);
       }
     } catch (e) {
-      console.log(`Error while fetching data: ${e}`);
+      console.log(`Error while fetching users list data: ${e}`);
     };
   }, [setUserList, userList]);
 
