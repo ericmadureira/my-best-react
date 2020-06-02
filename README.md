@@ -1,7 +1,7 @@
 # My best React
 
 ## Description
-This repository contains a demonstration of my React and front-end skills.
+This repository contains a demonstration of my React and front-end skills. (Work in progress)
 
 ## How to run
 1. Clone the repository
