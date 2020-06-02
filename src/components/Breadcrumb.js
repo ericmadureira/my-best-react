@@ -10,13 +10,13 @@ const Breadcrumb = () => {
     link.concat(`/${part}`);
     if (part === ''){
       return (
-        <Link to={link} className={style.link}>
+        <Link to={link} className={style.link} key={String(Date.now() + Math.random())}>
           <i className='fas fa-home' />
         </Link>
       );
     } else {
       return (
-        <Link to={link} className={style.link}>
+        <Link to={link} className={style.link} key={String(Date.now()) + Math.random()}>
           <i className='fas fa-chevron-right' />
           <span>{part}</span>
         </Link>
