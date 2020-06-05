@@ -17,8 +17,9 @@ This repository contains a demonstration of my React and front-end skills. (Work
 
 ## Tech stack
 - React
-- react-testing-library
-- Suspense/Lazy (Code splitting)
+- Tests - [react-testing-library](https://testing-library.com/)
+- Modern component styling - [styled-components](https://styled-components.com/)
+- Code splitting - [Suspense/Lazy](https://reactjs.org/docs/code-splitting.html)
 - Material-UI
 - React router
 - Axios
