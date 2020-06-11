@@ -17,6 +17,7 @@ This repository contains a demonstration of my React and front-end skills. (Work
 
 ## Tech stack
 - React
+- State management (useReducer + Context API)
 - Tests - [react-testing-library](https://testing-library.com/)
 - Modern component styling - [styled-components](https://styled-components.com/)
 - Code splitting - [Suspense/Lazy](https://reactjs.org/docs/code-splitting.html)
