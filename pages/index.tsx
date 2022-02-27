@@ -11,11 +11,11 @@ const Home: NextPage = () => {
         <section>
           <h2>Demos:</h2>
           <ul>
-            <Link href='/demos/resource-list' passHref>
-              <li>Resource List</li>
+            <Link href='/users' passHref>
+              <li>User list</li>
             </Link>
-            <Link href='/demos/forms' passHref>
-              <li>Forms</li>
+            <Link href='/form' passHref>
+              <li>Form</li>
             </Link>
           </ul>
         </section>
